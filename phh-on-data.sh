@@ -1,5 +1,7 @@
 #!/system/bin/sh
 
+cscver="$(getprop persist.sys.phh.samsung_csc_version)"
+[ ! -z "$cscver" ] && setprop ril.official_cscver "$cscver"
 [ -z "$(getprop ril.official_cscver)" ] && [ "$(getprop ro.product.vendor.device)" = "a05s" ] && setprop ril.official_cscver "A057FOJMFDZH2"
 
 vndk="$(getprop persist.sys.vndk)"
